@@ -1,0 +1,55 @@
+<section id="main" class="container">
+  <header>
+    <h3><i class="icon fa-eye"></i> Tracking Information for <b>{accessCode}</b></h3>
+
+  </header>
+  <div class="box">
+    <h4> <b>Link Information</b></h4>
+    <div class="table-wrapper">
+            <table class="alt">
+              <tbody>
+                <tr>
+                  <td class="v"><b>Access Code</b></td>
+                  <td style="width:70%">{accessCode}</td>
+                </tr>
+                <tr>
+                  <td  class="v"><b>Created Date</b></td>
+                  <td>{createdDate}</td>
+                </tr>
+                <tr>
+                  <td  class="v"><b>Original URL</b></td>
+                  <td>{destinationURL}</td>
+                </tr>
+                <tr>
+                  <td  class="v"><b>Tracking Link (give this out)</b></td>
+                  <td>http://{shortLink}/{accessCode}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+</div>
+<div class="box">
+    <h4><b>Access Logs</b></h4>
+    <table class="alt">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>IP Address</th>
+                  <th>User Agent</th>
+                  <th>Referring URL</th>
+                </tr>
+              </thead>
+              <tbody id="logs">
+              </tbody>
+            </table>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script src="/static/js/jquery.min.js"></script>
+<script>
+  var logs = {jsonLogs};
+</script>
+<script src="/static/js/track-page.js"></script>
