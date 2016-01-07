@@ -85,16 +85,16 @@ var getIPInfo = function(e){
   $box.append('<center><i class="fa fa-spinner fa-spin"></i> loading...</center>');
   modalBox.show('epa', $box, 1);
   //
-  $.getJSON('https://www.telize.com/geoip/'+ip+'?callback=?',
+  $.getJSON('https://freegeoip.net/json/'+ip+'?callback=?',
     function(res)
     {
       var $dv  = $('<div class="table-wrapper">'),
           $tbl = $('<table class="alt" style="margin-bottom:0px; padding-bottom:0px">'),
           $tbd = $('<tbody style="margin-bottom:0px; padding-bottom:0px">');
-      $tbd.append('<tr><td class="v"><b>Country</b></td><td style="width:70%">'+res.country+'</td></tr>');
-      $tbd.append('<tr><td class="v"><b>Region</b></td><td style="width:70%">'+res.region+'</td></tr>');
+      $tbd.append('<tr><td class="v"><b>Country</b></td><td style="width:70%">'+res.country_name+'</td></tr>');
+      $tbd.append('<tr><td class="v"><b>Region</b></td><td style="width:70%">'+res.region_name+'</td></tr>');
       $tbd.append('<tr><td class="v"><b>City</b></td><td style="width:70%">'+res.city+'</td></tr>');
-      $tbd.append('<tr><td class="v"><b>Timezone</b></td><td style="width:70%">'+res.timezone+'</td></tr>');
+      $tbd.append('<tr><td class="v"><b>Timezone</b></td><td style="width:70%">'+res.time_zone+'</td></tr>');
       $tbl.append($tbd);
       $dv.append($tbl);
       $('#ipinfo').html("<h4>Information about <b>"+res.ip+"</b></h4>");
